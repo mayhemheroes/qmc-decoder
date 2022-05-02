@@ -3,7 +3,7 @@ FROM --platform=linux/amd64 ubuntu:20.04 as builder
 
 ## Install build dependencies.
 RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y cmake clang
+    DEBIAN_FRONTEND=noninteractive apt-get install -y cmake clang git
 
 ## Add source code to the build stage.
 ADD . /qmc-decoder
@@ -13,7 +13,7 @@ ENV CC clang
 ENV CC_FOR_BUILD clang
 
 ## TODO: ADD YOUR BUILD INSTRUCTIONS HERE.
-RUN mkdir build && cd build && cmake .. && make
+RUN git submodule update --init && mkdir build && cd build && cmake .. && make
 
 # Package Stage
 FROM --platform=linux/amd64 ubuntu:20.04
