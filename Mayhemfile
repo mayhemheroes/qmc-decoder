@@ -1,0 +1,5 @@
+project: jbgreenh/qmc-decoder
+target: qmc-decoder
+
+cmds:
+  - cmd: /qmc-decoder @@ 
