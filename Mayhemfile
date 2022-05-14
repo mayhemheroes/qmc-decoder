@@ -1,0 +1,5 @@
+project: jacob-clemente/qmc-decoder 
+target: qmc-decoder 
+
+cmds:
+  - cmd: /qmc-decoder @@
